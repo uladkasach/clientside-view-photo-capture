@@ -1,0 +1,2 @@
+.image_holder .removable_image_element { cursor: -webkit-grab; cursor:-moz-grab; }
+.image_holder .removable_image_element:active { cursor: -webkit-grabbing; cursor:-moz-grabbing;}

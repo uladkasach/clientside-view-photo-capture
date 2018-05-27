@@ -1,5 +1,6 @@
 var create_removable_image = require("./../removable_image/index.js");
 var image_render_canvas = document.createElement('canvas');
+var Sortable = require('sortablejs');
 module.exports = async function(dom, options){
     // define elements in this context
     var video = dom.querySelector("video");
@@ -33,6 +34,10 @@ module.exports = async function(dom, options){
         console.log("attached!");
     }
 
+    /*
+        define drag and drop functionality
+    */
+    Sortable.create(image_holder);
 
     // return the resultant dom
     return dom;

@@ -1,3 +1,4 @@
+load("./styles.css")
 var view_loader = require('clientside-view-loader');
 module.exports = async function(dom, options){
 
