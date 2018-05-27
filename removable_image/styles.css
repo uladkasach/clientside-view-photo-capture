@@ -1,3 +1,10 @@
 .protect_button_text_with_background {
     background-color:rgba(255, 255, 255, 0.4);
 }
+
+.removable_image_element .remove_button {
+    display:none;
+}
+.removable_image_element:hover .remove_button {
+    display:flex;
+}

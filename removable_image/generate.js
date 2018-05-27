@@ -15,6 +15,7 @@ module.exports = async function(dom, options){
     var remove_button = await view_loader.load('clientside-view-button').build({title:'remove', type:'text', color_scheme:'red'});
     remove_button.classList.add('remove_button');
     remove_button.classList.add('protect_button_text_with_background');
+    remove_button.style.display = null; // let css decide
     remove_button_holder.appendChild(remove_button);
 
     // return resultant dom
