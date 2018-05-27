@@ -1,6 +1,10 @@
 load("./styles.css")
 var view_loader = require('clientside-view-loader');
 module.exports = async function(dom, options){
+    // normalize options
+    if(typeof options == "undefined") options = {};
+    if(typeof options.video == "undefined") options.video = {};
+    if(typeof options.preview == "undefined") options.preview = {};
 
     // append optional styles to video element
     var video = dom.querySelector('video');

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Photo Capture Demo</title>
+        <script src = '/node_modules/clientside-require/dist/bundle.js'></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Exo:200');
+            html{
+                font-family: 'Exo', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+    </body>
+    <script>
+    load("/init/index.js")
+        .then((dom)=>{
+            document.querySelector('body').appendChild(dom);
+        })
+    </script>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "clientside-view-photo-capture",
+  "version": "1.0.0",
+  "description": "a view module which enables taking and recording photos from a webcam",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uladkasach/clientside-view-photo-capture.git"
+  },
+  "keywords": [
+    "html5",
+    "clientside",
+    "frontend",
+    "photo",
+    "capture",
+    "image",
+    "webcam"
+  ],
+  "author": "uladkasach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uladkasach/clientside-view-photo-capture/issues"
+  },
+  "homepage": "https://github.com/uladkasach/clientside-view-photo-capture#readme",
+  "dependencies": {
+    "clientside-require": "^4.5.1",
+    "clientside-view-button": "^2.1.0",
+    "clientside-view-loader": "^2.7.3",
+    "sortablejs": "^1.7.0"
+  },
+  "components": {
+    "root": "src/photo_capture"
+  }
+}

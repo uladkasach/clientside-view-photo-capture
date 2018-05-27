@@ -2,10 +2,14 @@ var create_removable_image = require("./../removable_image/index.js");
 var image_render_canvas = document.createElement('canvas');
 var Sortable = require('sortablejs');
 module.exports = async function(dom, options){
+    // normalize options
+    if(typeof options == "undefined") options = {};
+    if(typeof options.video == "undefined") options.video = {};
+    if(typeof options.preview == "undefined") options.preview = {};
+
     // define elements in this context
     var video = dom.querySelector("video");
     var image_holder = dom.querySelector(".image_holder")
-
 
     /*
         initialize the video feed
