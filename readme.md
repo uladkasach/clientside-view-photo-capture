@@ -3,6 +3,7 @@
 This module implements a reusable view that enables capturing photos from the webcam. It utilizes the `clientside-view-loader` for loading and offers server side rendering support.
 
 
+![clientside-view-photo-capture_demo](https://user-images.githubusercontent.com/10381896/40589721-8eecc95e-61c0-11e8-9b0c-315522e58c0e.gif)
 
 
 # Usage
