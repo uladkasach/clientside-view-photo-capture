@@ -16,6 +16,7 @@
     load("/init/index.js")
         .then((dom)=>{
             document.querySelector('body').appendChild(dom);
+            window.photo_capture_element = dom;
         })
     </script>
 </html>

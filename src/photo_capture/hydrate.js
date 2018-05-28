@@ -43,6 +43,21 @@ module.exports = async function(dom, options){
     */
     Sortable.create(image_holder);
 
+    /*
+        define extraction protocol
+    */
+    dom.extract = function(){
+        // walk through every removable_image_element in the image_holder and get src from each
+        var images = [];
+        image_holder.querySelectorAll(".removable_image_element").forEach(element=>{
+            images.push(element.src);
+        })
+
+        // return the result
+        console.log(images);
+        return images;
+    }
+
     // return the resultant dom
     return dom;
 }
