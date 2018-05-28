@@ -53,7 +53,6 @@ module.exports = async function(dom, options){
         })
 
         // return the result
-        console.log(images);
         return images;
     }
 
