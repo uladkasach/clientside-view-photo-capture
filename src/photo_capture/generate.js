@@ -4,6 +4,7 @@ module.exports = async function(dom, options){
     // normalize options
     if(typeof options == "undefined") options = {};
     if(typeof options.video == "undefined") options.video = {};
+    if(typeof options.button == "undefined") options.button = {};
     if(typeof options.preview == "undefined") options.preview = {};
 
     // append optional styles to video element
@@ -12,7 +13,8 @@ module.exports = async function(dom, options){
     if(typeof options.video.max_width == "number") video.style.maxWidth = options.video.max_width + "px";
 
     // generate the capture button
-    var capture_button = await view_loader.load('clientside-view-button').build({title:'take photo', type:'text'});
+    var button_type = (typeof options.button.type == "string")? options.button.type : "text";
+    var capture_button = await view_loader.load('clientside-view-button').build({title:'take photo', type:button_type});
     capture_button.classList.add('photo_capture-capture_button');
     dom.querySelector(".button_holder").appendChild(capture_button);
 
