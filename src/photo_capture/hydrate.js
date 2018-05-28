@@ -35,7 +35,6 @@ module.exports = async function(dom, options){
 
         // attach the image with the rest of the images
         image_holder.appendChild(removable_image);
-        console.log("attached!");
     }
 
     /*
