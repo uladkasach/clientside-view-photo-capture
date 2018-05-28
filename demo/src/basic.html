@@ -12,11 +12,11 @@
     <body>
 
     </body>
-    Choose One:
-    <bR><br>
-
-    <a href='/src/basic.html'> basic demo </a>
-    <br><br>
-    <a href='/src/floating.html'> floating demo </a>
-
+    <script>
+    load("/src/init/index.js")
+        .then((dom)=>{
+            document.querySelector('body').appendChild(dom);
+            window.photo_capture_element = dom;
+        })
+    </script>
 </html>

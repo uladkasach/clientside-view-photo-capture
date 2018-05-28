@@ -1,0 +1,5 @@
+.removable_image_element {
+    margin:5px;
+    border-radius: 2px;
+    overflow:hidden;
+}
