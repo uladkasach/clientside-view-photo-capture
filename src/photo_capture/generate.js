@@ -18,6 +18,11 @@ module.exports = async function(dom, options){
     capture_button.classList.add('photo_capture-capture_button');
     dom.querySelector(".button_holder").appendChild(capture_button);
 
+    // generate the switch button
+    var capture_button = await view_loader.load('clientside-view-button').build({title:'switch source', type:"text"});
+    capture_button.classList.add('photo_capture-switch_button');
+    dom.querySelector(".button_holder_two").appendChild(capture_button);
+
     // return dom
     return dom;
 }

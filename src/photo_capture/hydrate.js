@@ -1,6 +1,8 @@
 var create_removable_image = require("./../removable_image/index.js");
 var image_render_canvas = document.createElement('canvas');
 var Sortable = require('sortablejs');
+var Stream_Manager = require('./stream_manager.js');
+
 module.exports = async function(dom, options){
     // normalize options
     if(typeof options == "undefined") options = {};
@@ -11,10 +13,13 @@ module.exports = async function(dom, options){
     var video = dom.querySelector("video");
     var image_holder = dom.querySelector(".image_holder")
 
+    // define new stream manager
+    var stream_manager = new Stream_Manager("video");
+
     /*
-        initialize the video feed
+        initialize the video feed to default camera
     */
-    var stream = await navigator.mediaDevices.getUserMedia({ video: true }) // retreive a media stream
+    var stream = await stream_manager.get_stream_from_device(0); // let device 0 be default device
     video.srcObject = stream; // set src of video to begin autoplay
 
     /*
@@ -36,6 +41,16 @@ module.exports = async function(dom, options){
         // attach the image with the rest of the images
         image_holder.appendChild(removable_image);
     }
+
+
+    /*
+        define source switch functionality
+    */
+    dom.querySelector(".photo_capture-switch_button").onclick = async function(){
+        var stream = await stream_manager.get_next_device();
+        video.srcObject = stream; // set src of video to begin autoplay
+    }
+    if((await stream_manager.get_devices()).length == 1) dom.querySelector(".photo_capture-switch_button").style.display = "none"; // hide if only 1 device
 
     /*
         define drag and drop functionality
